@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="5.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FigureStorage.DTO\FigureStorage.DTO.csproj" />
+      <ProjectReference Include="..\FigureStorage.Models\FigureStorage.Models.csproj" />
+      <ProjectReference Include="..\FigureStorage.Repo\FigureStorage.Repo.csproj" />
+    </ItemGroup>
+
+
+</Project>

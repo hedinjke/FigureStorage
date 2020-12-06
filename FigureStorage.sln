@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureStorage.API", "FigureStorage.API\FigureStorage.API.csproj", "{AD28E761-B57A-46E1-9511-1FE723DF6B3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureStorage.Models", "FigureStorage.Models\FigureStorage.Models.csproj", "{D6FD803F-1870-40E2-9DF0-377FD90BA25A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureStorage.Repo", "FigureStorage.Repo\FigureStorage.Repo.csproj", "{1F373C04-EDEB-4048-97B0-95FF66604F78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureStorage.DTO", "FigureStorage.DTO\FigureStorage.DTO.csproj", "{2D8DD833-32C3-4D2C-8F2E-40E75218C5CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive.Db", "TestDrive.Db\TestDrive.Db.csproj", "{5E124854-3AD6-491D-B75A-1C4663C2D96C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD28E761-B57A-46E1-9511-1FE723DF6B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD28E761-B57A-46E1-9511-1FE723DF6B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD28E761-B57A-46E1-9511-1FE723DF6B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD28E761-B57A-46E1-9511-1FE723DF6B3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6FD803F-1870-40E2-9DF0-377FD90BA25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6FD803F-1870-40E2-9DF0-377FD90BA25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6FD803F-1870-40E2-9DF0-377FD90BA25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6FD803F-1870-40E2-9DF0-377FD90BA25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F373C04-EDEB-4048-97B0-95FF66604F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F373C04-EDEB-4048-97B0-95FF66604F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F373C04-EDEB-4048-97B0-95FF66604F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F373C04-EDEB-4048-97B0-95FF66604F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D8DD833-32C3-4D2C-8F2E-40E75218C5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D8DD833-32C3-4D2C-8F2E-40E75218C5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D8DD833-32C3-4D2C-8F2E-40E75218C5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D8DD833-32C3-4D2C-8F2E-40E75218C5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E124854-3AD6-491D-B75A-1C4663C2D96C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E124854-3AD6-491D-B75A-1C4663C2D96C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E124854-3AD6-491D-B75A-1C4663C2D96C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E124854-3AD6-491D-B75A-1C4663C2D96C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

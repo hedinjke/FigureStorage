@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="figures.Lite test-drive" uuid="979bc238-f9ba-4a0f-940f-ac7e9251af48">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/TestDrive.Db/bin/Debug/netcoreapp3.1/figure.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="figures.Lite" uuid="5db62b6f-6f95-4d75-b362-23abab23fb8e">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/FigureStorage.API/figure.db</jdbc-url>
+    </data-source>
+  </component>
+</project>
