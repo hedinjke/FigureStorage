@@ -1,5 +1,6 @@
-﻿using System.Net.Http;
+﻿
 using System.Threading.Tasks;
+
 using FigureStorage.Models;
 using FigureStorage.Repo.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -28,17 +29,18 @@ namespace FigureStorage.API.Controllers
             return Ok(figure);
         }
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Rectangle figure)
+        public async Task<IActionResult> Post([FromBody] Figure figure)
         {
-
             if (figure == null)
-                return BadRequest();
-
+                return BadRequest(new {message = "Wrong data. Cannot create figure from."});
+            
             if (!figure.IsValid)
                 return BadRequest(new {message = "Figure is not valid."});
+            
             await _repository.AddAsync(figure);
             
-            return Ok();
+            return Ok(new {Id = figure.Id});
         }
+ 
     }
 }

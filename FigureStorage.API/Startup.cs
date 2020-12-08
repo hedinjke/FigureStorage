@@ -1,3 +1,7 @@
+using AutoMapper;
+using FigureStorage.API.Binders;
+using FigureStorage.API.Extensions;
+using FigureStorage.Models;
 using FigureStorage.Repo;
 using FigureStorage.Repo.Interfaces;
 using FigureStorage.Repo.Repositories;
@@ -22,7 +26,12 @@ namespace FigureStorage.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                    .AddNewtonsoftJson(options =>
+                     {
+                         options.SerializerSettings.Converters
+                                .Add(new InheritorsToBaseTypeJsonConverter<Figure>());
+                     });
 
             services.AddScoped<IRepositoryContextFactory, RepositoryContextFactory>(
                 provider => new RepositoryContextFactory(builder =>

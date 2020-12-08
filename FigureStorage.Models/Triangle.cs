@@ -7,6 +7,10 @@ namespace FigureStorage.Models
     [Table("Triangles")]
     public class Triangle : Figure
     {
+        public Triangle()
+        {
+        }
+
         public Triangle(double sideA, double sideB, double sideC)
         {
             if (sideA + sideB <= sideC ||
@@ -18,12 +22,13 @@ namespace FigureStorage.Models
             SideC = sideC;
         }
 
-        [Required] public double SideA { get; private set; }
-        [Required] public double SideB { get; private set; }
-        [Required] public double SideC { get; private set; }
+        public double SideA { get; set; }
+        public double SideB { get; set; }
+        public double SideC { get; set; }
 
+        public override string Type => GetType().Name;
         public override double Area => GetArea();
-        
+
         public override bool IsValid => Validate();
 
         private double GetArea()
@@ -34,9 +39,12 @@ namespace FigureStorage.Models
 
         private bool Validate()
         {
-            return !(SideA + SideB <= SideC ||
-                     SideA + SideC <= SideB ||
-                     SideB + SideC <= SideA);
+            var positiveSides = SideA > 0 && SideB > 0 && SideC > 0;
+            var canBeCreated =
+                SideA + SideB > SideC &&
+                SideA + SideC > SideB &&
+                SideB + SideC > SideA;
+            return positiveSides && canBeCreated;
         }
     }
 }
