@@ -7,7 +7,12 @@ namespace FigureStorage.API.Extensions
 {
     public static class TypeExtensions
     {
-        public static IEnumerable<Type> GetInheritors(this Type type)
+        /// <summary>
+        /// Get all derived non-abstract subclasses of given type./>
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static IEnumerable<Type> GetAllDerived(this Type type)
         {
             return Assembly.GetAssembly(type)
                           ?.GetTypes()
@@ -16,6 +21,11 @@ namespace FigureStorage.API.Extensions
                                             myType.IsSubclassOf(type));
         }
         
+        /// <summary>
+        /// Creates instance of given using default ctor.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static object CreateWithDefaultCtor(this Type type)
         {
             return Activator.CreateInstance(type, false);

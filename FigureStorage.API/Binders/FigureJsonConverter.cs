@@ -12,7 +12,7 @@ namespace FigureStorage.API.Binders
         private static Type[] s_inheritors;
         static FigureJsonConverter()
         {
-            s_inheritors = typeof(Figure).GetInheritors().ToArray();
+            s_inheritors = typeof(Figure).GetAllDerived().ToArray();
         }
         protected override Figure Create(Type objectType, JObject jObject)
         {

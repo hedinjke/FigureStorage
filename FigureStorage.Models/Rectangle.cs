@@ -13,6 +13,8 @@ namespace FigureStorage.Models
         public Rectangle(double radius)
         {
             Radius = radius;
+            if (!Validate())
+                throw new ArgumentException("Rectangle is not valid.");
         }
 
         public double Radius { get; set; }
@@ -24,6 +26,11 @@ namespace FigureStorage.Models
         private bool Validate()
         {
             return Radius > 0;
+        }
+
+        public override string ToString()
+        {
+            return $"Rectangle: R{Radius}";
         }
     }
 }

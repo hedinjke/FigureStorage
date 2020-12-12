@@ -11,7 +11,7 @@ namespace FigureStorage.API.Binders
         private static Type[] s_inheritors;
         static InheritorsToBaseTypeJsonConverter()
         {
-            s_inheritors = typeof(T).GetInheritors().ToArray();
+            s_inheritors = typeof(T).GetAllDerived().ToArray();
         }
         protected override T Create(Type objectType, JObject jObject)
         {

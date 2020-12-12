@@ -11,15 +11,22 @@ namespace FigureStorage.Models
         {
         }
 
+        /// <summary>
+        /// Create triangle from 3 given sides.
+        /// Throw <see cref="ArgumentException"/> if triangle is not valid.
+        /// </summary>
+        /// <param name="sideA"></param>
+        /// <param name="sideB"></param>
+        /// <param name="sideC"></param>
+        /// <exception cref="ArgumentException"></exception>
         public Triangle(double sideA, double sideB, double sideC)
         {
-            if (sideA + sideB <= sideC ||
-                sideA + sideC <= sideB ||
-                sideB + sideC <= sideA)
-                throw new ArgumentException("Triangle is not valid.");
             SideA = sideA;
             SideB = sideB;
             SideC = sideC;
+
+            if (!Validate())
+                throw new ArgumentException("Triangle is not valid.");
         }
 
         public double SideA { get; set; }
@@ -45,6 +52,11 @@ namespace FigureStorage.Models
                 SideA + SideC > SideB &&
                 SideB + SideC > SideA;
             return positiveSides && canBeCreated;
+        }
+
+        public override string ToString()
+        {
+            return $"Triangle: A{SideA} B{SideB} C{SideC}";
         }
     }
 }
