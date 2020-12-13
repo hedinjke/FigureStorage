@@ -7,9 +7,7 @@ namespace FigureStorage.Models
     [Table("Triangles")]
     public class Triangle : Figure
     {
-        public Triangle()
-        {
-        }
+        public Triangle() { }
 
         /// <summary>
         /// Create triangle from 3 given sides.

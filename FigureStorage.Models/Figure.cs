@@ -5,12 +5,10 @@ namespace FigureStorage.Models
 {
     public abstract class Figure
     {
-        [Key]
-        public int Id { get; set; }
+        [Key] public int Id { get; set; }
 
-        [NotMapped] 
-        public abstract string Type { get; }
-        public virtual double Area { get; }
-        public virtual bool IsValid { get; }
+        [NotMapped] public abstract string Type { get; }
+        public abstract double Area { get; }
+        public abstract bool IsValid { get; }
     }
 }

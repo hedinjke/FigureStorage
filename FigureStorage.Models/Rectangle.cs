@@ -6,10 +6,13 @@ namespace FigureStorage.Models
     [Table("Rectangles")]
     public class Rectangle : Figure
     {
-        public Rectangle()
-        {
-        }
-
+        public Rectangle() { }
+        /// <summary>
+        /// Create rectangle with given radius.
+        /// Throws <see cref="ArgumentException"/> if rectangle is not valid.
+        /// </summary>
+        /// <param name="radius"></param>
+        /// <exception cref="ArgumentException"></exception>
         public Rectangle(double radius)
         {
             Radius = radius;
