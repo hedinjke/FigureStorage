@@ -16,5 +16,6 @@ namespace FigureStorage.Repo
         public DbSet<Figure> Figures { get; set; }
         public DbSet<Rectangle> Rectangles { get; set; }
         public DbSet<Triangle> Triangles { get; set; }
+        public DbSet<NewFigure> NewFigures { get; set; }
     }
 }

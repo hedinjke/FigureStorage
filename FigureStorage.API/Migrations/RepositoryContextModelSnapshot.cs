@@ -26,6 +26,16 @@ namespace FigureStorage.API.Migrations
                     b.ToTable("Figures");
                 });
 
+            modelBuilder.Entity("FigureStorage.Models.NewFigure", b =>
+                {
+                    b.HasBaseType("FigureStorage.Models.Figure");
+
+                    b.Property<double>("Side")
+                        .HasColumnType("REAL");
+
+                    b.ToTable("NewFigure");
+                });
+
             modelBuilder.Entity("FigureStorage.Models.Rectangle", b =>
                 {
                     b.HasBaseType("FigureStorage.Models.Figure");
@@ -50,6 +60,15 @@ namespace FigureStorage.API.Migrations
                         .HasColumnType("REAL");
 
                     b.ToTable("Triangles");
+                });
+
+            modelBuilder.Entity("FigureStorage.Models.NewFigure", b =>
+                {
+                    b.HasOne("FigureStorage.Models.Figure", null)
+                        .WithOne()
+                        .HasForeignKey("FigureStorage.Models.NewFigure", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("FigureStorage.Models.Rectangle", b =>
