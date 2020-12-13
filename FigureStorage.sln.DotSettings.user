@@ -3,21 +3,16 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Users\fomin\.nuget\packages\humanizer.core\2.8.26\lib\netstandard2.0\Humanizer.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3f22e0e8_002Dea4e_002D40b3_002Da2f4_002Dd89f959ae4c8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CtorDefault" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::0850841C-C07C-4C67-85EC-391174FA23EA::.NETCoreApp,Version=v3.1::FigureStorage.Test.Figures.TriangleTest.CtorDefault&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::0850841C-C07C-4C67-85EC-391174FA23EA::.NETCoreApp,Version=v3.1::FigureStorage.Test.Figures.TriangleTest.Validation&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::0850841C-C07C-4C67-85EC-391174FA23EA::.NETCoreApp,Version=v3.1::FigureStorage.Test.Figures.RectangleTest.IsFigure&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::0850841C-C07C-4C67-85EC-391174FA23EA::.NETCoreApp,Version=v3.1::FigureStorage.Test.Figures.RectangleTest.TypeProperty&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::0850841C-C07C-4C67-85EC-391174FA23EA::.NETCoreApp,Version=v3.1::FigureStorage.Test.Figures.RectangleTest.Area&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::0850841C-C07C-4C67-85EC-391174FA23EA::.NETCoreApp,Version=v3.1::FigureStorage.Test.Figures.RectangleTest.Validation&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::0850841C-C07C-4C67-85EC-391174FA23EA::.NETCoreApp,Version=v3.1::FigureStorage.Test.Figures.RectangleTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::0850841C-C07C-4C67-85EC-391174FA23EA::.NETCoreApp,Version=v3.1::FigureStorage.Test.Figures.TriangleTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fc418458_002D970f_002D468a_002D810d_002D67d1d7d87a9a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d567285d_002Ddd6f_002D4bbc_002D965f_002D1e67b8296403/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" Name="TriangleDefault" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="K:\dev\source\repos\FigureStorage\FigureStorage.Test" Presentation="&amp;lt;FigureStorage.Test&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	</wpf:ResourceDictionary>

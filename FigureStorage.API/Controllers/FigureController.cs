@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
+using FigureStorage.API.Models;
 using FigureStorage.DTO;
 using FigureStorage.Models;
 using FigureStorage.Repo.Interfaces;
@@ -37,14 +38,15 @@ namespace FigureStorage.API.Controllers
         public async Task<IActionResult> Post([FromBody] Figure figure)
         {
             if (figure == null)
-                return BadRequest(new {message = "Bad request. Can't create any figure from that."});
-
+                return BadRequest(new BadRequestMsgResponse("Bad request. Can't create any figure from that."));
             if (!figure.IsValid)
-                return BadRequest(new {message = "Figure is not valid."});
+                return BadRequest(new BadRequestMsgResponse("Figure is not valid."));
 
+            figure.Id = default;
+            
             await _repository.AddAsync(figure);
-
-            return Ok(new {figure.Id});
+            
+            return Ok(new FigurePostResponse(figure));
         }
     }
 }
