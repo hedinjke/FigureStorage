@@ -1,0 +1,35 @@
+﻿POST https://localhost:5001/figure
+Content-Type: application/json
+
+{
+  "type": "rectangle",
+  "radius": {{$randomInt}}
+}
+###
+POST https://localhost:5001/figure
+Content-Type: application/json
+
+{
+  "type": "triangle",
+    "sideA": {{$randomInt}},
+    "sideB": {{$randomInt}},
+    "sideC": {{$randomInt}}
+
+}
+###
+POST https://localhost:5001/figure
+Content-Type: application/json
+
+{
+  "type": "rectangle",
+  "radius": -20
+}
+
+<> 2020-12-13T034357.400.json
+###
+
+GET https://localhost:5001/figure/24
+Content-Type: application/json
+
+###
+
