@@ -52,6 +52,8 @@ response triangle:
 
 ### Допущения
 
+- Для хранения фигур в базе данных выбранна модель `TablePerHierarchy`, 
+поэтому все классы фигур должны быть декорированы атрибутом `[Table("FigureDbTableName")]`
 - Все фигуры хранятся в библиотеке FigureStorage.Models и наследуются от базового класса FigureStorage.Models.Figure.
 - Все DTO фигур хранятся в библиотеке FigureStorage.DTO, наследуются об базового класса FigureStorage.DTO.FigureDTO.
 Названия типов DTO повторяют названия своих моделей с постфиксом "DTO" (Figure -> FigureDTO, Rectangle -> RectangleDTO).
@@ -69,7 +71,10 @@ response triangle:
 
 - добавить новый класс, наследующий от FigureStorage.Models.Figure `public class NewFigure : Figure {}`
 - переопределить свойства Type, IsValid, Area, добавить свойства новой фигуры.
+- новый класс обязательно необходимо декорировать атрибутом `[Table("NewFigure")]` для корректной работы `TablePerHierarchy`
 - добавить в RepositoryContext соответствующий `DbSet<NewFigure> NewFigures`
 - добавить миграцию: `dotnet ef migrations add AddedNewFigure`
 - добавить DTO для новой фигуры: `public class NewFigureDTO : FigureDTO {}`
 - добавить Unit-тесты для нового типа фигур.
+
+Простейший случай добавления фигуры (но без соответствующих Unit-test'ов) показан [в последнем коммите в ветке new-figure-branch.](https://github.com/hedinjke/FigureStorage/commit/33a5ca63e04c53ea89949ca35cb80707853b79fa)
