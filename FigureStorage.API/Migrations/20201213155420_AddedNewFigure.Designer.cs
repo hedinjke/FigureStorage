@@ -2,14 +2,16 @@
 using FigureStorage.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FigureStorage.API.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20201213155420_AddedNewFigure")]
+    partial class AddedNewFigure
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,14 +28,24 @@ namespace FigureStorage.API.Migrations
                     b.ToTable("Figures");
                 });
 
-            modelBuilder.Entity("FigureStorage.Models.Circle", b =>
+            modelBuilder.Entity("FigureStorage.Models.NewFigure", b =>
+                {
+                    b.HasBaseType("FigureStorage.Models.Figure");
+
+                    b.Property<double>("Side")
+                        .HasColumnType("REAL");
+
+                    b.ToTable("NewFigure");
+                });
+
+            modelBuilder.Entity("FigureStorage.Models.Rectangle", b =>
                 {
                     b.HasBaseType("FigureStorage.Models.Figure");
 
                     b.Property<double>("Radius")
                         .HasColumnType("REAL");
 
-                    b.ToTable("Circles");
+                    b.ToTable("Rectangles");
                 });
 
             modelBuilder.Entity("FigureStorage.Models.Triangle", b =>
@@ -52,11 +64,20 @@ namespace FigureStorage.API.Migrations
                     b.ToTable("Triangles");
                 });
 
-            modelBuilder.Entity("FigureStorage.Models.Circle", b =>
+            modelBuilder.Entity("FigureStorage.Models.NewFigure", b =>
                 {
                     b.HasOne("FigureStorage.Models.Figure", null)
                         .WithOne()
-                        .HasForeignKey("FigureStorage.Models.Circle", "Id")
+                        .HasForeignKey("FigureStorage.Models.NewFigure", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FigureStorage.Models.Rectangle", b =>
+                {
+                    b.HasOne("FigureStorage.Models.Figure", null)
+                        .WithOne()
+                        .HasForeignKey("FigureStorage.Models.Rectangle", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
