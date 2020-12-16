@@ -3,21 +3,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FigureStorage.Models
 {
-    [Table("Rectangles")]
-    public class Rectangle : Figure
+    [Table("Circles")]
+    public class Circle : Figure
     {
-        public Rectangle() { }
+        public Circle() { }
         /// <summary>
-        /// Create rectangle with given radius.
-        /// Throws <see cref="ArgumentException"/> if rectangle is not valid.
+        /// Create circle with given radius.
+        /// Throws <see cref="ArgumentException"/> if circle is not valid.
         /// </summary>
         /// <param name="radius"></param>
         /// <exception cref="ArgumentException"></exception>
-        public Rectangle(double radius)
+        public Circle(double radius)
         {
             Radius = radius;
             if (!Validate())
-                throw new ArgumentException("Rectangle is not valid.");
+                throw new ArgumentException("Circle is not valid.");
         }
 
         public double Radius { get; set; }
@@ -33,7 +33,7 @@ namespace FigureStorage.Models
 
         public override string ToString()
         {
-            return $"Rectangle: R{Radius}";
+            return $"Rircle: R{Radius}";
         }
     }
 }

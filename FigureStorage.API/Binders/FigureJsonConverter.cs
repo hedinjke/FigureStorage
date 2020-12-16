@@ -21,7 +21,7 @@ namespace FigureStorage.API.Binders
             var type = jObject["type"].ToString().Pascalize();
             return type switch
             {
-                nameof(Rectangle) => new Rectangle(),
+                nameof(Circle) => new Circle(),
                 nameof(Triangle)  => new Triangle(),
                 _                 => null
             };

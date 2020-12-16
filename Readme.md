@@ -6,7 +6,7 @@
 ```json  
 POST /figure body:
 {
-  "type": "rectangle",
+  "type": "circle",
   "radius": 10
 }
 ```
@@ -22,15 +22,14 @@ POST /figure body:
 }
 ```
 
-
 Запрос GET по id вернёт соответствующую фигуру с указанием типа:
 ```json  
 GET /figure/{id} 
 ```
 ```json  
-response rectangle:
+response circle:
 {
-  "type": "Rectangle",
+  "type": "Circle",
   "radius": 10
 }
 ```
@@ -56,7 +55,7 @@ response triangle:
 поэтому все классы фигур должны быть декорированы атрибутом `[Table("FigureDbTableName")]`
 - Все фигуры хранятся в библиотеке FigureStorage.Models и наследуются от базового класса FigureStorage.Models.Figure.
 - Все DTO фигур хранятся в библиотеке FigureStorage.DTO, наследуются об базового класса FigureStorage.DTO.FigureDTO.
-Названия типов DTO повторяют названия своих моделей с постфиксом "DTO" (Figure -> FigureDTO, Rectangle -> RectangleDTO).
+Названия типов DTO повторяют названия своих моделей с постфиксом "DTO" (Figure -> FigureDTO, Circle -> CircleDTO).
 Это необходимо для автоматической настройки AutoMapper'а.
 (см. FigureStorage.API.Mapper.FigureProfile и FigureStorage.API.Mapper.MapperProfileExtensions)
 - Новые фигуры необходимо наследовать от базового класса FigureStorage.Models.Figure и переопределять

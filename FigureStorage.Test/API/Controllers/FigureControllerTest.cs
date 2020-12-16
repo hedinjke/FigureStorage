@@ -31,7 +31,7 @@ namespace FigureStorage.Test.API.Controllers
         {
             var mockRepo = new Mock<IFigureRepository>();
             var mockMapper = new Mock<IMapper>();
-            var figure1 = new Rectangle(20) as Figure;
+            var figure1 = new Circle(20) as Figure;
             var figure2 = new Triangle(10, 12, 8) as Figure;
 
             var controller = new FigureController(mockRepo.Object, mockMapper.Object);
@@ -70,7 +70,7 @@ namespace FigureStorage.Test.API.Controllers
         {
             var mockRepo = new Mock<IFigureRepository>();
             var mockMapper = new Mock<IMapper>();
-            Figure figure = new Rectangle {Radius = -15};
+            Figure figure = new Circle {Radius = -15};
 
             var controller = new FigureController(mockRepo.Object, mockMapper.Object);
 
@@ -86,20 +86,20 @@ namespace FigureStorage.Test.API.Controllers
         }
 
         [Fact]
-        public async void GetFigureFoundsRectangle()
+        public async void GetFigureFoundsCircle()
         {
             var mockRepo = new Mock<IFigureRepository>();
             var mockMapper = new Mock<IMapper>();
             var id = 10;
-            var rectangle = new Rectangle(10);
+            var circle = new Circle(10);
 
             var controller = new FigureController(mockRepo.Object, mockMapper.Object);
 
             mockRepo.Setup(e => e.GetAsync(id))
-                    .Returns(() => Task.Run<Figure>(() => rectangle));
+                    .Returns(() => Task.Run<Figure>(() => circle));
 
-            mockMapper.Setup(e => e.Map<FigureDTO>(rectangle))
-                      .Returns(new RectangleDTO());
+            mockMapper.Setup(e => e.Map<FigureDTO>(circle))
+                      .Returns(new CircleDTO());
 
             var result = await controller.Get(id);
 
@@ -107,7 +107,7 @@ namespace FigureStorage.Test.API.Controllers
             var response = (OkObjectResult) result;
 
             Assert.IsAssignableFrom<FigureDTO>(response.Value);
-            Assert.IsType<RectangleDTO>(response.Value);
+            Assert.IsType<CircleDTO>(response.Value);
         }
         
         [Fact]
