@@ -76,4 +76,4 @@ response triangle:
 - добавить DTO для новой фигуры: `public class NewFigureDTO : FigureDTO {}`
 - добавить Unit-тесты для нового типа фигур.
 
-Простейший случай добавления фигуры (но без соответствующих Unit-test'ов) показан [в последнем коммите в ветке new-figure-branch.](https://github.com/hedinjke/FigureStorage/commit/33a5ca63e04c53ea89949ca35cb80707853b79fa)
+Простейший случай добавления квадрата (но без соответствующих Unit-test'ов) показан [в последнем коммите в ветке new-square.](https://github.com/hedinjke/FigureStorage/commit/a2d4fd527ac848fbbc44c7ef3d5f314a89ad890b)
