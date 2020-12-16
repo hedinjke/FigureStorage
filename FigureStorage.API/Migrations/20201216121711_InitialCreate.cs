@@ -11,9 +11,7 @@ namespace FigureStorage.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Area = table.Column<double>(type: "REAL", nullable: false),
-                    IsValid = table.Column<bool>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true)
                 },
                 constraints: table =>
                 {
@@ -21,7 +19,7 @@ namespace FigureStorage.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Rectangles",
+                name: "Circles",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -30,9 +28,9 @@ namespace FigureStorage.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Rectangles", x => x.Id);
+                    table.PrimaryKey("PK_Circles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Rectangles_Figures_Id",
+                        name: "FK_Circles_Figures_Id",
                         column: x => x.Id,
                         principalTable: "Figures",
                         principalColumn: "Id",
@@ -64,7 +62,7 @@ namespace FigureStorage.API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Rectangles");
+                name: "Circles");
 
             migrationBuilder.DropTable(
                 name: "Triangles");

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FigureStorage.API.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20201206213843_InitialCreate")]
+    [Migration("20201216121711_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,25 +23,19 @@ namespace FigureStorage.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<double>("Area")
-                        .HasColumnType("REAL");
-
-                    b.Property<bool>("IsValid")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
                     b.ToTable("Figures");
                 });
 
-            modelBuilder.Entity("FigureStorage.Models.Rectangle", b =>
+            modelBuilder.Entity("FigureStorage.Models.Circle", b =>
                 {
                     b.HasBaseType("FigureStorage.Models.Figure");
 
                     b.Property<double>("Radius")
                         .HasColumnType("REAL");
 
-                    b.ToTable("Rectangles");
+                    b.ToTable("Circles");
                 });
 
             modelBuilder.Entity("FigureStorage.Models.Triangle", b =>
@@ -60,11 +54,11 @@ namespace FigureStorage.API.Migrations
                     b.ToTable("Triangles");
                 });
 
-            modelBuilder.Entity("FigureStorage.Models.Rectangle", b =>
+            modelBuilder.Entity("FigureStorage.Models.Circle", b =>
                 {
                     b.HasOne("FigureStorage.Models.Figure", null)
                         .WithOne()
-                        .HasForeignKey("FigureStorage.Models.Rectangle", "Id")
+                        .HasForeignKey("FigureStorage.Models.Circle", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

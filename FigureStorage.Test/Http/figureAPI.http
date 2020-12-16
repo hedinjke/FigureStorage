@@ -2,7 +2,7 @@
 Content-Type: application/json
 
 {
-  "type": "rectangle",
+  "type": "circle",
   "radius": {{$randomInt}}
 }
 ###
@@ -21,14 +21,14 @@ POST https://localhost:5001/figure
 Content-Type: application/json
 
 {
-  "type": "rectangle",
+  "type": "circle",
   "radius": -20
 }
 
 <> 2020-12-13T034357.400.json
 ###
 
-GET https://localhost:5001/figure/24
+GET https://localhost:5001/figure/4
 Content-Type: application/json
 
 ###
