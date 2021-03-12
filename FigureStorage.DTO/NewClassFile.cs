@@ -9,5 +9,6 @@
 
 		public void SomeMethod() { }
 		public void SomeNewFunctionality() { }
+		public void SomeMoreNewFunctionality() { }
 	}
 }
